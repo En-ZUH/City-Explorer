@@ -1,7 +1,7 @@
 # Project Name: City Explorer
 
 **Author**: Enas Batayneh
-**Netlify link**: https://city-explorer-enas.netlify.app/
+[Netlify link](https://city-explorer-enas.netlify.app/)
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 <!--## Overview
