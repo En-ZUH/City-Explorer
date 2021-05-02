@@ -32,6 +32,7 @@ export class App extends React.Component {
       searchQuary: event.target.value
     });
 
+
   }
   render() {
     return (
