@@ -19,18 +19,19 @@ code {
    font-family: 'Quicksand', sans-serif;
 
 }
-h4 {
+h5{
   position: absolute;
-  top: 1.3rem;;
-right: 25rem;
-
+  top: 1.8rem;;
+right: 18rem;
 }
 h1 {
   padding: 8px 0px 10px 5px;
 }
-body {
+#root {
   background-color: #f5cebe;
   margin: 10px 10px 10px 10px;
+  height: 39rem;
+  overflow: hidden;
 
 }
  input {
@@ -50,10 +51,16 @@ img {
   width: 80%;
   height: 20rem;
 }
-form {
+Form {
   margin-left: 20px;
 }
-.p1 {
-  font-size: 1.5rem;
+ Label {
+  font-size:  1.2rem;
+  margin-top: 1.2rem;
 }
+
+.Footer {
+   position: relative;
  
+   font-weight: bold;
+}
