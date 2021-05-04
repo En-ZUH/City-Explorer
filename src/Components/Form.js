@@ -18,6 +18,7 @@ export default class form extends React.Component {
       view: false,
       not_valid: true,
       imageSrc: '',
+
       env1: process.env.REACT_APP_ENV
 
     };
@@ -31,10 +32,14 @@ export default class form extends React.Component {
       const request = await axios.get(url);
       const lat = request.data[0].lat;
       const lon = request.data[0].lon;
+
       this.setState({
 
         data: request.data[0],
-        imageSrc: `https://maps.locationiq.com/v3/staticmap?key=pk.a2a65c09040e2f28766f692614e18035&center=${lat},${lon}&zoom=10&size=1000x300`
+        imageSrc: `https://maps.locationiq.com/v3/staticmap?key=pk.a2a65c09040e2f28766f692614e18035&center=${lat},${lon}&zoom=10&size=1000x300`,
+        w: 'Welcome to',
+        i: 'is located at',
+        by: 'by'
       }
 
 
@@ -73,6 +78,7 @@ export default class form extends React.Component {
                 <Form.Control type="text" placeholder="city name" onChange={this.updateLoc} />
               </Form.Group>
 
+
               <Button variant='primary' type='submit' >Explore!</Button>
 
 
@@ -82,7 +88,19 @@ export default class form extends React.Component {
 
           </div>
           <>
-            <Img imageSrc1={this.state.imageSrc} lat={this.state.data.lat} lon={this.state.data.lon} display_name={this.state.data.display_name} />
+            {/* 
+
+            <p class='p1'> Welcome To {this.state.data.display_name} </p>
+
+            <p>{this.state.data.display_name} Located at {this.state.data.lat} by{this.state.data.lat}
+            </p> */}
+            <>
+              {/* <p class='p1'>{this.state.w} {this.state.display_name}</p>
+
+              <p>  {this.state.display_name} {this.state.i} {this.state.lat} {this.state.by}  {this.state.lon}</p> */}
+
+              <Img imageSrc1={this.state.imageSrc} w={this.state.w} display_name={this.state.data.display_name} i={this.state.i} lat={this.state.data.lat} by={this.state.by} lon={this.state.data.lon} />
+            </>
           </>
         </>
       );
