@@ -21,5 +21,6 @@ export default class Img extends React.Component {
       </>
       </div >
     );
+
   }
 }
