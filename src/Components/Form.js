@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Img from './Img';
 import '../index.css';
 import { Button, Form } from 'react-bootstrap';
-import weather from './weather';
+import Weather1 from './Weather';
 
 
 
@@ -20,7 +20,7 @@ export default class form extends React.Component {
       view: false,
       not_valid: true,
       imageSrc: '',
-      dataWeather: false,
+      dataWeather: [],
       env1: process.env.REACT_APP_ENV
 
     };
@@ -37,7 +37,7 @@ export default class form extends React.Component {
       const lon = request.data[0].lon;
 
       const url2 = `http://localhost:3040/weather`;
-      const request2 = await axios.get(url2);
+      const requestUrl = await axios.get(url2);
 
       this.setState({
 
@@ -46,11 +46,12 @@ export default class form extends React.Component {
         w: 'Welcome to',
         i: 'is located at',
         by: 'by',
-        dataWeather: request2.data
+        dataWeather: requestUrl.data
       }
 
 
-      );
+
+      ); console.log(this.state.dataWeather);
       // console.log(this.state.dataWeather[0].date);
       // console.log(request2);
     }
@@ -91,9 +92,9 @@ export default class form extends React.Component {
           </div>
           <>
 
-            <Img imageSrc1={this.state.imageSrc} w={this.state.w} display_name={this.state.data.display_name} i={this.state.i} lat={this.state.data.lat} by={this.state.by} lon={this.state.data.lon} dataWeather={this.state.dataWeather} />
+            <Img imageSrc1={this.state.imageSrc} w={this.state.w} display_name={this.state.data.display_name} i={this.state.i} lat={this.state.data.lat} by={this.state.by} lon={this.state.data.lon} />
 
-            <weather date={this.state.dataWeather.date} description={this.state.dataWeather.description} />
+            <Weather1 weath={this.state.dataWeather} />
           </>
         </>
 
