@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'react-bootstrap/Image';
 import '../index.css';
 import Form from 'react-bootstrap/Form';
-import Weather from './Weather';
+// import Weather from './Weather';
 
 export default class Img extends React.Component {
   render() {
@@ -19,7 +19,7 @@ export default class Img extends React.Component {
 
           </Form>
           <Image src={this.props.imageSrc1} fluid dateWeather={this.props.dateWeather} />
-          < Weather dateWeather={this.props.dateWeather} />
+          {/* < Weather dateWeather={this.props.dateWeather} /> */}
 
 
         </>
