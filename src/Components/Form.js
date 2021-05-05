@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Form from 'react-bootstrap/Form';
-// import Button from 'react-bootstrap/Button';
 import Img from './Img';
 import '../index.css';
 import { Button, Form } from 'react-bootstrap';
