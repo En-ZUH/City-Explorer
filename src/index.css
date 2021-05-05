@@ -22,7 +22,8 @@ code {
 h5{
   position: absolute;
   top: 1.8rem;;
-right: 18rem;
+right: 13rem;
+
 }
 h1 {
   padding: 8px 0px 10px 5px;
@@ -31,7 +32,7 @@ h1 {
   background-color: #f5cebe;
   margin: 10px 10px 10px 10px;
   height: 39rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 
 }
  input {
