@@ -1,7 +1,7 @@
 import React from 'react';
 import '../index.css';
 import love from './asset/love.png';
-import res from './asset/res.png';
+
 
 export default class Footer extends React.Component {
   render() {
