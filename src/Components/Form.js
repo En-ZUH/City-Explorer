@@ -38,7 +38,7 @@ export default class form extends React.Component {
 
       const url2 = `http://localhost:3040/weather`;
       const requestUrl = await axios.get(url2);
-
+      console.log(requestUrl.data);
       this.setState({
 
         data: request.data[0],
