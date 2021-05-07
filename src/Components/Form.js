@@ -14,32 +14,37 @@ export default class form extends React.Component {
     this.state = {
       // Location: '',
       searchQuary: '',
-      data: [],
-      view: false,
+      data: [], // to store the data getting drom the url (line 32)
+      view: false, // to show if the img visible or not visible
       not_valid: true,
       imageSrc: '',
       dataWeather: [],
-      env1: process.env.REACT_APP_ENV
-
+      env1: process.env.REACT_APP_ENV,
+      env2: process.env.REACT_APP_ENV_IQ_KEY
     };
   }
 
-
-  getSite = async (event) => {
+  // gitSite is a synchronus arrow function, that used the axios (33) to send a request a request to the locqationIQ (line 32), to get the location
+  getSite = async (event) => { // it is async because the axios ia a promise(synch) function
     try {
       event.preventDefault();
 
-      const url = `${this.state.env1}key=pk.a2a65c09040e2f28766f692614e18035&q=${this.state.searchQuary}&format=json`;
+      const url = `${this.state.env1}key=${this.state.env2} &q=${this.state.searchQuary}&format=json`;
       const request = await axios.get(url);
       const lat = request.data[0].lat;
       const lon = request.data[0].lon;
 
-      const url2 = `http://localhost:3040/weather`;
+
+      // console.log(request.data);
+      // console.log(request.data[0]); // target the data from our request
+      // console.log(request.data[0].lat);
+
+      const url2 = `http://localhost:3040/weather`; //weather_URL
       const requestUrl = await axios.get(url2);
       console.log(requestUrl.data);
-      this.setState({
 
-        data: request.data[0],
+      this.setState({
+        data: request.data[0], // after getting the data from 32, the states will be updated
         imageSrc: `https://maps.locationiq.com/v3/staticmap?key=pk.a2a65c09040e2f28766f692614e18035&center=${lat},${lon}&zoom=10&size=1000x300`,
         w: 'Welcome to',
         i: 'is located at',
@@ -62,7 +67,7 @@ export default class form extends React.Component {
   }
   updateLoc = (event) => {
     this.setState({
-      searchQuary: event.target.value,
+      searchQuary: event.target.value, // to update the entry that the user entered during typing
     });
 
   };
