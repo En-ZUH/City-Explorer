@@ -5,7 +5,7 @@ import Img from './Img';
 import '../index.css';
 import { Button, Form } from 'react-bootstrap';
 import Weather1 from './Weather';
-
+import Movie from './Movie';
 
 
 export default class form extends React.Component {
@@ -42,12 +42,17 @@ export default class form extends React.Component {
       // console.log(request.data[0].lat);
       //const url2 = `http://localhost:3040/weather`; //weather_URL from weather.Json (staticlly)
 
-      const url2 = `http://localhost:3950/weather?lat=${lat}&lon=${lon}`;
+      const url2 = `http://localhost:3250/weather?lat=${lat}&lon=${lon}`;
       const requestUrl = await axios.get(url2);
 
-      console.log(this.state.env3);
-      console.log(requestUrl);
-      console.log(this.state.dataWeather);
+      //console.log(this.state.env3);
+      //console.log(requestUrl);
+      //console.log(this.state.dataWeather);
+
+      const url3 = `http://localhost:3250/movie?query=${this.state.searchQuary}`;
+
+      const movieRequest = await axios.get(url3);
+      console.log(movieRequest);
 
       this.setState({
         data: request.data[0], // after getting the data from 32, the states will be updated
@@ -55,7 +60,8 @@ export default class form extends React.Component {
         w: 'Welcome to',
         i: 'is located at',
         by: 'by',
-        dataWeather: requestUrl.data
+        dataWeather: requestUrl.data,
+        dataMovie: movieRequest.data
       }
 
 
@@ -63,6 +69,7 @@ export default class form extends React.Component {
       );
       // console.log(this.state.dataWeather[0].date);
       // console.log(request2);
+      console.log(this.state.dataMovie);
     }
     catch {
       this.setState({
@@ -104,6 +111,7 @@ export default class form extends React.Component {
             <Img imageSrc1={this.state.imageSrc} w={this.state.w} display_name={this.state.data.display_name} i={this.state.i} lat={this.state.data.lat} by={this.state.by} lon={this.state.data.lon} />
 
             <Weather1 weath={this.state.dataWeather} />
+            <Movie mov={this.state.dataMovie} />
           </>
         </>
 
