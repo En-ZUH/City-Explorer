@@ -19,8 +19,10 @@ export default class form extends React.Component {
       not_valid: true,
       imageSrc: '',
       dataWeather: [],
+      dataMovie: [],
       env1: process.env.REACT_APP_ENV,
-      env2: process.env.REACT_APP_ENV_IQ_KEY
+      env2: process.env.REACT_APP_ENV_IQ_KEY,
+      env3: process.env.REACT_SERVER
     };
   }
 
@@ -38,10 +40,14 @@ export default class form extends React.Component {
       // console.log(request.data);
       // console.log(request.data[0]); // target the data from our request
       // console.log(request.data[0].lat);
+      //const url2 = `http://localhost:3040/weather`; //weather_URL from weather.Json (staticlly)
 
-      const url2 = `http://localhost:3040/weather`; //weather_URL
+      const url2 = `http://localhost:3950/weather?lat=${lat}&lon=${lon}`;
       const requestUrl = await axios.get(url2);
-      console.log(requestUrl.data);
+
+      console.log(this.state.env3);
+      console.log(requestUrl);
+      console.log(this.state.dataWeather);
 
       this.setState({
         data: request.data[0], // after getting the data from 32, the states will be updated
@@ -54,7 +60,7 @@ export default class form extends React.Component {
 
 
 
-      ); console.log(this.state.dataWeather);
+      );
       // console.log(this.state.dataWeather[0].date);
       // console.log(request2);
     }
