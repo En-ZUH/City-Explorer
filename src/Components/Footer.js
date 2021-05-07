@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div>
-        <p class='Footer'> &copy; Enas_Zuhair <img src={love} alt='img' className='img'></img></p>
+        <p className='Footer'> &copy; Enas_Zuhair <img src={love} alt='img' className='img'></img></p>
 
 
       </div >
