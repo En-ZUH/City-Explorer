@@ -12,5 +12,6 @@ export class Weather1 extends Component {
       })
     );
   }
+
 }
 export default Weather1;
