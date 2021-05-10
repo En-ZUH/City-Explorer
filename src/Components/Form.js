@@ -22,7 +22,7 @@ export default class form extends React.Component {
       dataMovie: [],
       env1: process.env.REACT_APP_ENV,
       env2: process.env.REACT_APP_ENV_IQ_KEY,
-      env3: process.env.REACT_SERVER
+      env3: process.env.REACT_APP_SERVER
     };
   }
 
