@@ -43,7 +43,7 @@ export default class form extends React.Component {
       //const url2 = `http://localhost:3550/weather`; //weather_URL from weather.Json (staticlly)
 
       // const url2 = `http://localhost:3550/weather?lat=${lat}&lon=${lon}`;
-      const url2 = `${this.state.REACT_SERVER}/weather?lat=${lat}&lon=${lon}`;
+      const url2 = `${this.state.env3}/weather?lat=${lat}&lon=${lon}`;
 
       const requestUrl = await axios.get(url2);
 
@@ -52,7 +52,7 @@ export default class form extends React.Component {
       //console.log(this.state.dataWeather);
 
       // const url3 = `http://localhost:3550/movie?query=${this.state.searchQuary}`;
-      const url3 = `${this.state.REACT_SERVER}/movie?query=${this.state.searchQuary}`;
+      const url3 = `${this.state.env3}/movie?query=${this.state.searchQuary}`;
 
       const movieRequest = await axios.get(url3);
       console.log(movieRequest);
