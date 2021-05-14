@@ -8,7 +8,7 @@ export default class Movie extends React.Component {
           <div>
             <p>{value2.title}</p>
             <p>{value2.overview}</p>
-            <img src={`https://image.tmdb.org/t/p/w500/${value2.movieImage}`} alt='' width={'300px'} width={'200px'} />
+            <img src={`https://image.tmdb.org/t/p/w500/${value2.movieImage}`} alt='' width={'300px'} />
 
           </div>
         );
